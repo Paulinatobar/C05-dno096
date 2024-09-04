@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <title>👴🏻👴🏼👴🏽👴🏾👴🏿 jQuery</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <main>
+            <p>
+                <a href="index.html" class="activo">Hola</a>
+                <a href="page-1.html">Selecciona</a>
+                <a href="page-2.html">Foto</a>
+            </p>
+            <h1></h1>
+            <h2></h2>
+            <p id="aqui"></p>
+            <p id="alla" class="escondido"></p>
+        </main>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script>
+            var texto = {
+                saludo: ["¡It's me, hi, I'm the problem it's me!", "¡Oh, hi!", "Welcome to the real world, it sucks, you gonna love it!"],
+                nombre: "Mi nombre es Lorem Ipsum",
+                motivo: "Tomé este curso y completo esta evaluación porque me formé como ingeniera, pero me encanta el diseño, aunque aún no sé por cuál área me iré. Para mí siempre ha sido interesante la programación, me manejo en python y he programado un poco en HTML para un ramo, de manera básica, así que quise aprender desde el foco del diseño y así formarme un poco en el UX/UI. <span>¡Click here para tener una sorpresa! 👀 </span>.",
+                etc: "Ya revisé mi primera nota y la verdad es que a pesar de que tuve una nota alta, me decepcioné un poco de ella porque creí que había logrado hacer todo bien. Durante la prueba estuve muy ansiosa porque no me gusta trabajar en contra el tiempo y tal vez eso hizo que me olvidara detalles. Además noté que no se me contaron las décimas de la clase 02, así que tengo que revisar bien eso!",
+            };
+            var aleatorio = Math.floor(Math.random() * texto.saludo.length);
+            console.log(aleatorio);
+
+            $("h1").html(texto.saludo[aleatorio]);
+            $("h2").html(texto.nombre);
+            $("#aqui").html(texto.motivo);
+            $("#alla").html(texto.etc);
+            function revelador() {
+                $("#alla").toggleClass("escondido");
+            }
+            $("span").click(revelador);
+        </script>
+    </body>
+</html>
